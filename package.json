@@ -1,0 +1,37 @@
+{
+  "name": "mongo-shopping-list",
+  "version": "0.0.0",
+  "description": "Shopping List application for Thinkful.com class that utilizes MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tstuart/mongo-shopping-list.git"
+  },
+  "keywords": [
+    "mongo",
+    "express",
+    "node",
+    "Thinkful",
+    "mocha",
+    "chai"
+  ],
+  "author": "Tim Stuart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tstuart/mongo-shopping-list/issues"
+  },
+  "homepage": "https://github.com/tstuart/mongo-shopping-list",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": "^4.12.3",
+    "mongoose": "^4.0.2"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "chai-http": "^1.0.0",
+    "mocha": "^2.2.4"
+  }
+}
