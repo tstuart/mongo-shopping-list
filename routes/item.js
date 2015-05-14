@@ -22,13 +22,12 @@ router.post('/items', function(req, res) {
 router.delete('/items/:id', function(req, res) {
   var id = req.params.id;
   console.log(id);
-  /*
   Item.delete(id, function(item){
     res.status(201).json(item);
   }, function(err) {
     res.status(400).json(err);
   });
-  */
+  
 });
 
 module.exports = router;
