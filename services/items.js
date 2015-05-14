@@ -19,13 +19,23 @@ exports.list = function(callback, errback) {
     callback(items);
   });
 };
-
+/*
+exports.remove = function(id, callback, errback) {
+Item.findByIdAndRemove(id, function(err) {
+if (err) {
+errback(err);
+return;
+}
+callback();
+});
+};
+*/
 exports.delete = function(id, callback, errback) {
-  Item.findByIdAndRemove(id, function(item){
-    if (!item) {
-      errback({"error": "Invalid ID supplied.", "id": id});
+  Item.findByIdAndRemove(id, function(err){
+    if (err) {
+      errback(err);
       return;
     } 
-     callback(item);
+    callback();
   });
 };
