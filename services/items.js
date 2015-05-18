@@ -19,17 +19,7 @@ exports.list = function(callback, errback) {
     callback(items);
   });
 };
-/*
-exports.remove = function(id, callback, errback) {
-Item.findByIdAndRemove(id, function(err) {
-if (err) {
-errback(err);
-return;
-}
-callback();
-});
-};
-*/
+
 exports.delete = function(id, callback, errback) {
   Item.findByIdAndRemove(id, function(err){
     if (err) {
@@ -38,4 +28,14 @@ exports.delete = function(id, callback, errback) {
     } 
     callback();
   });
+};
+
+exports.update = function(id, name, callback, errback) {
+  Item.findByIdAndUpdate(id, {name: name}, {upsert: true}, function(err, item) {
+    if (err) {
+      errback(err);
+      return;
+    }
+    callback(item);
+  });  
 };
