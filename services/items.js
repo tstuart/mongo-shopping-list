@@ -31,7 +31,8 @@ exports.delete = function(id, callback, errback) {
 };
 
 exports.update = function(id, name, callback, errback) {
-  Item.findByIdAndUpdate(id, {name: name}, {upsert: true}, function(err, item) {
+  // Had to add new:true to options to return the new document rather than the original
+  Item.findByIdAndUpdate(id, {$set: {name: name}}, {upsert: true, new: true}, function(err, item) {
     if (err) {
       errback(err);
       return;

@@ -32,7 +32,7 @@ router.delete('/items/:id', function(req, res) {
 
 router.put('/items/:id', function(req, res) {
   var id = req.params.id;
-    
+  
   Item.update(id, req.body.name, function(item){
     res.status(201).json(item); 
   }, function(err) {
